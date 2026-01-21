@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import CathedralStructuredData from '@/components/CathedralStructuredData'
 
 export const metadata: Metadata = {
   title: 'Git is Love | Memory Preservation & Digital Connection',
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
     canonical: 'https://git-islove.com',
   },
   metadataBase: new URL('https://git-islove.com'),
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
 }
 
 export default function RootLayout({
@@ -39,6 +41,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo-git-is-life.png" type="image/png" />
         <script defer data-domain="git-islove.com" src="https://plausible.io/js/script.js"></script>
+        <CathedralStructuredData siteName="Git is Love" siteUrl="https://git-islove.com" description="To love is to preserve. Every commit is an act of love. Every branch is connection. Git doesn't forget what you love." theme="love" />
       </head>
       <body>{children}</body>
     </html>
